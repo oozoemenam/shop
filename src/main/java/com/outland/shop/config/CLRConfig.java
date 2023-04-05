@@ -1,6 +1,7 @@
 package com.outland.shop.config;
 
 import com.outland.shop.model.Product;
+import com.outland.shop.repository.OrderItemRepository;
 import com.outland.shop.service.ProductService;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
@@ -8,6 +9,11 @@ import org.springframework.context.annotation.Configuration;
 
 @Configuration
 public class CLRConfig {
+    private final OrderItemRepository orderItemRepository;
+
+    public CLRConfig(OrderItemRepository orderItemRepository) {
+        this.orderItemRepository = orderItemRepository;
+    }
 
     @Bean
     CommandLineRunner runner(ProductService productService) {
