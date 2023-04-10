@@ -20,6 +20,10 @@
 - Lombok
 - Validation
 
+#### Client
+
+- Angular Material
+- NgRx Store
 
 
 ## Author

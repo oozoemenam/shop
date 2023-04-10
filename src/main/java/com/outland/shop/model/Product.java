@@ -1,5 +1,7 @@
 package com.outland.shop.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
@@ -16,10 +18,22 @@ public class Product {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @NotNull(message = "Product name is required")
+    @NotNull
     private String name;
 
-    private Double price;
+    @NotNull
+    private double price;
 
+    @Lob
+    private String description;
+
+    // @JsonIgnore
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @JoinColumn(name = "category_id", nullable = false)
+    private Category category;
+    
     private String imageUrl;
+
+    // @Embedded
+    // private Rating rating;
 }

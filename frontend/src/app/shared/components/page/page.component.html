@@ -1,0 +1,19 @@
+<div id="container">
+  <app-title
+    num="{{ number }}"
+    title="{{ title }}"
+    subtitle="{{ subtitle }}"
+    [centerText]="centerText"
+  ></app-title>
+  <div id="icon-container" *ngIf="icon">
+    <mat-icon class="icon" color="primary">{{ icon }}</mat-icon>
+  </div>
+  <button
+    mat-flat-button
+    color="primary"
+    (click)="buttonClicked()"
+    [disabled]="buttonDisabled"
+  >
+    {{ buttonText }}
+  </button>
+</div>

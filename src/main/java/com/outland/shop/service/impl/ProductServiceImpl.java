@@ -5,6 +5,9 @@ import com.outland.shop.model.Product;
 import com.outland.shop.repository.ProductRepository;
 import com.outland.shop.service.ProductService;
 import lombok.RequiredArgsConstructor;
+
+import java.util.List;
+
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -26,7 +29,12 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
-    public Product save(Product product) {
+    public Product createProduct(Product product) {
         return productRepository.save(product);
+    }
+
+    @Override
+    public Iterable<Product> createAllProducts(List<Product> products) {
+        return productRepository.saveAll(products);
     }
 }
