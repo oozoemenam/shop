@@ -1,5 +1,6 @@
 # Shop!
 
+![](src/main/resources/static/Screenshot%202023-04-10.png)
 
 ## Getting Started
 
