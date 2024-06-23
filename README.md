@@ -17,7 +17,6 @@
 - Spring Data JPA  
 - H2 Database / PostgreSQL Driver
 - Spring Security
-- Spring Boot Actuator
 - Lombok
 - Validation
 
@@ -28,4 +27,4 @@
 
 
 ## Author
-- @davidisresting (https://github.com/davidisresting)
+- @oozoemenam (https://github.com/oozoemenam)

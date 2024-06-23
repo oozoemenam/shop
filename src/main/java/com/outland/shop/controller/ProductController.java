@@ -37,7 +37,7 @@ public class ProductController {
     public ResponseEntity<List<ProductDto>> getAllProducts() {
         List<Product> products = StreamSupport
                 .stream(productService.getAllProducts().spliterator(), false)
-                .collect(Collectors.toList());
+                .toList();
         List<ProductDto> productDtos = products
                 .stream()
                 .map(this::convertToDto)

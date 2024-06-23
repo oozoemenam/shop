@@ -17,7 +17,7 @@ public class OrderDto {
 
     private OrderStatus orderStatus;
 
-    public int getNumberOfProducts() {
+    public Integer getNumberOfProducts() {
         return getOrderItemDtos().size();
     }
 

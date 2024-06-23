@@ -19,10 +19,10 @@ public class ProductValidation {
                 .stream()
                 .filter(orderItem -> Objects.isNull(productService.getProduct(
                         orderItem.getProduct().getId())))
-                .collect(Collectors.toList());
+                .toList();
 
         if (!CollectionUtils.isEmpty(productList)) {
-            new ResourceNotFoundException("Products not found");
+            throw new ResourceNotFoundException("Products not found");
         }
     }
 }

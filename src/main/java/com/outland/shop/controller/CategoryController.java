@@ -38,7 +38,7 @@ public class CategoryController {
     public ResponseEntity<List<CategoryDto>> getAllCategories() {
         List<Category> categories = StreamSupport
                 .stream(categoryService.getAllCategories().spliterator(), false)
-                .collect(Collectors.toList());
+                .toList();
         List<CategoryDto> categoryDtos = categories
                 .stream()
                 .map(this::convertToDto)

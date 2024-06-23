@@ -6,9 +6,9 @@ import lombok.Data;
 public class OrderItemDto {
     private ProductDto product;
 
-    private int quantity;
+    private Integer quantity;
 
-    public double getTotalPrice() {
+    public Double getTotalPrice() {
         return getProduct().getPrice() * getQuantity();
     }
 }

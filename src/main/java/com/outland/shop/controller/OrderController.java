@@ -39,7 +39,7 @@ public class OrderController {
     public ResponseEntity<List<OrderDto>> getAllOrders() {
         List<Order> orders = StreamSupport
                 .stream(orderService.getAllOrders().spliterator(), false)
-                .collect(Collectors.toList());
+                .toList();
         List<OrderDto> orderDtos = orders
                 .stream()
                 .map(this::convertToDto)
